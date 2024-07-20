@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    <ul>
+      <% for (i=0; i < messages.length; i++) { %>
+        <p><strong><%= messages[i].text %>.</strong> From: <%= messages[i].user %>, at <%= messages[i].added %> </p>
+        <a href="/message?text=<%= encodeURIComponent(messages[i].text) %>&user=<%= encodeURIComponent(messages[i].user) %>&added=<%= encodeURIComponent(messages[i].added) %>">Open</a>
+      <% } %>
+    </ul>
+  </body>
+</html>
